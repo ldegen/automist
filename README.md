@@ -4,12 +4,12 @@ Create a CLI from human readable documentation
 The automist takes a yaml file and produces a configuration object for [minimist](https://github.com/substack/minimist).
 
 
-# Installation
+## Installation
 You now the drill. Just `npm install` it and your good.
 ``` bash
 npm install --save automist
 ```
-# Usage
+## Usage
 
 First, document your CLI. We use YAML here, because its easy on the eyes. Coffeescript may also be an option.
 
@@ -57,4 +57,20 @@ if argv.h
   console.log automist.help readme
   process.exit -1
 ```
+
+## Work In Progress 
+I am working on generating help mesages, i.e. the ones you would expect when
+issuing the `--help`-flag. 
+
+## Future Plans
+### generate man pages
+It shouldn't be difficult to generate markdown from the `readme` object.
+And there are existing solutions to create man-pages in troff-format.
+Given that npm knows to deal with man pages (at least on a unix-like 
+system), this would be another low-hanging fruit.
+
+### process markdown input
+On the input side, it might be nice to extract the `readme`-object from
+a markdown. This would be nice for github projects, where it is very common
+to have a README.md file as your configuration.
 

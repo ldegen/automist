@@ -31,6 +31,7 @@
     "mocha": "^3.1.2"
   },
   "dependencies": {
+    "columnify": "^1.5.4",
     "prettify-markdown": "^0.1.1"
   }
 }
