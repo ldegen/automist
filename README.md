@@ -72,5 +72,5 @@ system), this would be another low-hanging fruit.
 ### process markdown input
 On the input side, it might be nice to extract the `readme`-object from
 a markdown. This would be nice for github projects, where it is very common
-to have a README.md file as your configuration.
+to have a README.md file as your primary form of documentation.
 
