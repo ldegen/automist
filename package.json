@@ -1,6 +1,6 @@
 {
   "name": "automist",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Create a CLI from human-readable documentation",
   "main": "lib/automist.js",
   "scripts": {
@@ -28,10 +28,9 @@
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
     "coffee-script": "^1.11.1",
+    "js-yaml": "^3.6.1",
+    "minimist": "^1.2.0",
     "mocha": "^3.1.2"
   },
-  "dependencies": {
-    "columnify": "^1.5.4",
-    "prettify-markdown": "^0.1.1"
-  }
+  "dependencies": {}
 }

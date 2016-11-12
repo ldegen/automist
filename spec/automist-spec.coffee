@@ -1,6 +1,7 @@
 describe "The Automist", ->
   readme = undefined
-  automist = require "../src/automist"
+  Automist = require "../src/automist"
+  automist = undefined
   beforeEach ->
     readme =
       synopsis: "foobar [ <option> … ] <file> …"
@@ -27,14 +28,14 @@ describe "The Automist", ->
         argument: 'path'
         description: "Path to the configuration file to read. Defaults to $HOME/.foobarrc"
       ]
-
+    automist = Automist readme
   it "assumes that an otion is a boolean if no argument was given", ->
-    opts = automist readme
+    opts = automist.options()
     expect(opts.boolean).to.eql ['h']
     expect(opts.string).to.eql ['c']
 
   it "registers the long option names as aliasses", ->
-    opts = automist readme
+    opts = automist.options()
     expect(opts.alias).to.eql
       h:'help'
       c:'config'

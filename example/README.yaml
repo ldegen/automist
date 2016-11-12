@@ -1,0 +1,47 @@
+name: foobar - Does useful stuff
+section: 1
+arguments: 
+  - name: BANG
+  - name: BUG
+    optional: true
+    moreThanOnce: true
+
+description: |
+  **foobar** is special. It is not *your* average tool.
+
+  Even more description. YAML is great for that kind of stuff, you
+  could put anything here, includeing markup of any kind, even
+  nest another yaml document, as long as you keep the indent-levels
+  consistent.
+
+    if you indent stuff
+    you get a **block quote**.
+
+                  Neat!
+
+  Continuing with my block from before. It is super important to 
+  completely ignore what I am writing here.
+
+options:
+  - short: c
+    long: config-file
+    argument: path
+    description: |
+      Read configuration from <path>. If ommited, the configuration is 
+      read from `$FOOBAR_HOME/config.json`
+
+      I don't know what else to say. Maybe  a blockquote:
+
+          There is text
+          And there is stupid text
+      
+  - short: h
+    long: help
+    description: |
+      Print this help message
+
+  - short: m
+    long: manpage
+    description: |
+      Generate a manpage.
+

@@ -1,10 +1,3 @@
-columnify = require "columnify"
-optsSwitch = (o)->
-  s="-#{o.short}"
-  if o.long?
-    s += ",\n--#{o.long}"
-  s+= " <#{o.argument}>" if o.argument?
-  s
 pairs2obj = (pairs)->
   o={}
   o[key]=value for [key,value] in pairs
@@ -15,27 +8,8 @@ minimistOptions = (readme)->
   alias: pairs2obj ([option.short,option.long] for option in readme.options when option.long?)
   stopEarly: false
 
-  
+module.exports = (readme)->
+  options: ->minimistOptions readme
+  help: -> require("./help") readme
+  manpage: -> require("./manpage") readme
 
-help= (readme)->
-  opts = ({option:optsSwitch(option), description:option.description+'\n\n'} for option in readme.options)
-  optionColumns = columnify opts,
-    minWidth:15
-    config:
-      description:
-        preserveNewLines:true
-      option:
-        maxWidth:35
-  configColumns = columnify readme.configuration
-  """
-  
-  Synopsis:
-  #{readme.synopsis}
-
-  Options:
-  #{optionColumns}
-  
-  """
-
-module.exports = minimistOptions
-module.exports.help = help
